@@ -3,43 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Color Changer</title>
+    <title>Static Netflix-like Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
+            background-color: #141414;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px;
+            background-color: #e50914;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .banner {
+            background-color: #333; /* Dark background for the banner */
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            transition: background-color 0.5s ease;
         }
-        h1 {
-            color: #333;
+
+        .banner h1 {
+            font-size: 48px;
         }
-        p {
-            color: #666;
+
+        .banner p {
+            font-size: 24px;
+        }
+
+        .banner button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #e50914;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #555; /* Dark grey for the movie cards */
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            height: 150px; /* Fixed height for cards */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Background Color Changer</h1>
+        <div class="logo">My Netflix</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">New & Popular</a></li>
+                <li><a href="#">My List</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <p>The background color will change every 2 seconds.</p>
+        <section class="banner">
+            <h1>Welcome to My Netflix</h1>
+            <p>Watch anywhere. Cancel anytime.</p>
+            <button>Watch Now</button>
+        </section>
+        <section class="content">
+            <h2>Trending Now</h2>
+            <div class="grid">
+                <div class="card">Movie 1</div>
+                <div class="card">Movie 2</div>
+                <div class="card">Movie 3</div>
+                <div class="card">Movie 4</div>
+                <div class="card">Movie 5</div>
+                <div class="card">Movie 6</div>
+            </div>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2024 My Website</p>
+        <p>&copy; 2024 My Netflix</p>
     </footer>
-
-    <script>
-        function changeBackgroundColor() {
-            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'];
-            const randomIndex = Math.floor(Math.random() * colors.length);
-            document.body.style.backgroundColor = colors[randomIndex];
-        }
-
-        // Change background color every 10 seconds (10000 milliseconds)
-        setInterval(changeBackgroundColor, 2000);
-    </script>
 </body>
 </html>
