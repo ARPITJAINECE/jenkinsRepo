@@ -10,10 +10,11 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh """
-                    sudo cp -r ./* /var/www/html/website
+                sh '''
+                    sudo mkdir -p /var/www/html/website  # Create the directory if it doesn't exist
+                    sudo cp -r ./index.html ./README.md ./Jenkinsfile /var/www/html/website/
                     sudo systemctl restart apache2
-                """
+                '''
             }
         }
     }
